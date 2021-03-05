@@ -1,0 +1,2146 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FiroozehGameServiceFaaS</name>
+    </assembly>
+    <members>
+        <member name="T:FiroozehGameServiceFaaS.Core.Providers.BasicAPI.AchievementProvider">
+            <summary>
+                Represents Achievement Provider Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Core.Providers.BasicAPI.AssetsProvider">
+            <summary>
+                Represents Assets Provider Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Core.Providers.BasicAPI.LeaderboardProvider">
+            <summary>
+                Represents Leaderboard Provider Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Core.Providers.BasicAPI.PlayerProvider">
+            <summary>
+                Represents Player Provider Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Core.Providers.BasicAPI.SaveProvider">
+            <summary>
+                Represents SaveGame Provider Data Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Core.Providers.BasicAPI.TableProvider">
+            <summary>
+                Represents DBaaS Provider Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Core.Providers.GsLive.ChatProvider">
+            <summary>
+                Represents Chat Provider Model In GsLive
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.GameServiceFaaS">
+            <summary>
+                Represents Game Service FaaS Base Class
+            </summary>
+        </member>
+        <member name="P:FiroozehGameServiceFaaS.GameServiceFaaS.Achievement">
+            <summary>
+                Represents Achievement Provider Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="P:FiroozehGameServiceFaaS.GameServiceFaaS.Leaderboard">
+            <summary>
+                Represents Leaderboard Provider Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="P:FiroozehGameServiceFaaS.GameServiceFaaS.Assets">
+            <summary>
+                Represents Assets Provider Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="P:FiroozehGameServiceFaaS.GameServiceFaaS.Table">
+            <summary>
+                Represents Table Provider Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="P:FiroozehGameServiceFaaS.GameServiceFaaS.Player">
+            <summary>
+                Represents Player Provider Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="P:FiroozehGameServiceFaaS.GameServiceFaaS.Save">
+            <summary>
+                Represents SaveGame Provider Data Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="P:FiroozehGameServiceFaaS.GameServiceFaaS.Chat">
+            <summary>
+                Represents Chat Provider Data Model In GSLive
+            </summary>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.GameServiceFaaS.ConfigureFaaS(System.String)">
+            <summary>
+             Set configuration For Initialize Game Service FaaS.
+            </summary>
+            <param name="faaSToken">Set The FaaS Token that Registered in the Developer panel</param>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.GameServiceFaaS.RegisterFunction``2(System.Func{``0,System.Threading.Tasks.Task{``1}},System.UInt16,System.UInt16)">
+            <summary>
+            Register a Function
+            </summary>
+            <param name="func">Specifies the Function</param>
+            <param name="timeout">Specifies the Function Timeout</param>
+            <param name="maxWaitingTime">Specifies the Function max Waiting Time</param>
+            <typeparam name="TIn">Specifies the Function Input Type</typeparam>
+            <typeparam name="TOut">Specifies the Function Output Type</typeparam>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.GameServiceFaaS.UnRegisterFunction``2(System.Func{``0,System.Threading.Tasks.Task{``1}})">
+            <summary>
+            UnRegister a Function
+            </summary>
+            <param name="func">Specifies the Function</param>
+            <typeparam name="TIn">Specifies the Function Input Type</typeparam>
+            <typeparam name="TOut">Specifies the Function Output Type</typeparam>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.GameServiceFaaS.Run(System.Boolean)">
+            <summary>
+            Run Game Service FaaS System
+            </summary>
+            <param name="isDebug">set it true when running in Debug Mode For Testing</param>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.GameServiceFaaS.Dispose">
+            <summary>
+            Dispose Game Service FaaS
+            </summary>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.GameServiceFaaS.IsAvailable">
+            <summary>
+            Get Game Service FaaS Status
+            </summary>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.GameServiceFaaS.Version">
+            <summary>
+            Get Game Service FaaS Version
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.Achievement">
+            <summary>
+                Represents Achievement Data Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.Achievement.Id">
+            <summary>
+                Gets the Achievement id.
+            </summary>
+            <value>the Achievement id</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.Achievement.Description">
+            <summary>
+                Gets the Achievement Description.
+            </summary>
+            <value>the Achievement Description</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.Achievement.Game">
+            <summary>
+                Gets the Game id.
+            </summary>
+            <value>the Game id</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.Achievement.Image">
+            <summary>
+                Gets the Achievement Cover URL.
+            </summary>
+            <value>the Achievement Cover URL</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.Achievement.IsUnlocked">
+            <summary>
+                Gets the Status of Earned Achievement
+                if the status is True You Earned this Achievement Before
+            </summary>
+            <value>the Status of Earned Achievement</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.Achievement.Key">
+            <summary>
+                Gets the Achievement Key.
+                You Can Use It To Unlock Achievement
+            </summary>
+            <value>the Achievement Key</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.Achievement.Name">
+            <summary>
+                Gets the Achievement Name.
+            </summary>
+            <value>the Achievement Name</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.Achievement.Point">
+            <summary>
+                Gets the Achievement Point.
+            </summary>
+            <value>the Achievement Point</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.Achievement.Status">
+            <summary>
+                Gets the Achievement status.
+                if the status is True You Can Unlock Achievement
+            </summary>
+            <value>the Achievement status</value>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.ActiveDevice">
+            <summary>
+                Represents ActiveDevice Data Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.ActiveDevice.DeviceId">
+            <summary>
+                Gets the DeviceID
+            </summary>
+            <value>the DeviceID</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.ActiveDevice.DeviceModel">
+            <summary>
+                Gets the Device Model
+            </summary>
+            <value>the Device Model</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.ActiveDevice.DeviceName">
+            <summary>
+                Gets the Device Name
+            </summary>
+            <value>the Device Name</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.ActiveDevice.GraphicsDeviceName">
+            <summary>
+                Gets the Device Graphics Name
+            </summary>
+            <value>the Device Graphics Name</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.ActiveDevice.OperatingSystem">
+            <summary>
+                Gets the Device Operating System
+            </summary>
+            <value>the Device Operating System</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.ActiveDevice.IsCurrentDevice">
+            <summary>
+                returns true if the Active Device For Current Player
+            </summary>
+            <value>returns true if the Active Device For Current Player</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.ActiveDevice.LastLoginTime">
+            <summary>
+                Gets the Last Login Time
+            </summary>
+            <value>the Last Login Time</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.ActiveDevice.FirstLoginTime">
+            <summary>
+                Gets the First Login Time
+            </summary>
+            <value>the First Login Time</value>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.Aggregations.AggregationCore">
+            <summary>
+                Represents AggregationCore Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.Aggregations.ConstraintAggregation">
+            <summary>
+                Represents ConstraintAggregation Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.Aggregations.ConstraintAggregation.#ctor(System.Int32,System.Int32)">
+            <summary>
+                ConstraintAggregation
+            </summary>
+            <param name="skip">Skip Value for ConstraintAggregation</param>
+            <param name="limit">Limit Value for ConstraintAggregation</param>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.Aggregations.MatchAggregation">
+            <summary>
+                Represents MatchAggregation Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.Aggregations.MatchAggregation.#ctor(FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.Matcher.MatcherCore)">
+            <summary>
+                the MatchAggregation Data Class
+            </summary>
+            <param name="matcher"></param>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.Aggregations.ProjectAggregation">
+            <summary>
+                Represents ProjectAggregation Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.Aggregations.ProjectAggregation.#ctor(System.String[])">
+            <summary>
+                ProjectAggregation
+            </summary>
+            <param name="rowNames">Set the Row Names to Project them</param>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.Aggregations.SortAggregation">
+            <summary>
+                Represents SortAggregation Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.Aggregations.SortAggregation.#ctor(System.String,FiroozehGameServiceFaaS.Models.Enums.DBaaS.TableSortOrder)">
+            <summary>
+                the SortAggregation BucketOption
+            </summary>
+            <param name="elementName">the name of Element you want to Sort by it</param>
+            <param name="sortOrder">the sortOrder you want to Sort by it</param>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.Matcher.MatcherCore">
+            <summary>
+                Represents MatcherCore Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.Matcher.NumberMatcher">
+            <summary>
+                Represents NumberMatcher Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.Matcher.NumberMatcher.#ctor(System.String,System.Object,FiroozehGameServiceFaaS.Models.Enums.DBaaS.NumberMatcherTypes)">
+            <summary>
+                the NumberMatcher Aggregation
+            </summary>
+            <param name="name">the name of Element you want to Match it</param>
+            <param name="numberValue">the numberValue of Element you want to Match it</param>
+            <param name="matcherType">The Type of Number Match</param>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.Matcher.ObjectMatcher">
+            <summary>
+                Represents ObjectMatcher Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.Matcher.ObjectMatcher.#ctor(System.String,System.Object,FiroozehGameServiceFaaS.Models.Enums.DBaaS.ObjectMatcherTypes)">
+            <summary>
+                the ObjectMatcher Aggregation
+            </summary>
+            <param name="name">the name of Element you want to Match it</param>
+            <param name="value">the value of Element you want to Match it</param>
+            <param name="matcherType">The Type of Object Match</param>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.Operators.And">
+            <summary>
+                Represents And Operator Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.Operators.And.#ctor(FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.Matcher.MatcherCore[])">
+            <summary>
+                the And Aggregation
+            </summary>
+            <param name="matchers">the matchers That you Want Match Them With And Operator</param>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.Operators.Or">
+            <summary>
+                Represents Or Operator Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.Operators.Or.#ctor(FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.Matcher.MatcherCore[])">
+            <summary>
+                the Or Operator Aggregation
+            </summary>
+            <param name="matchers">the matchers That you Want Match Them With Or Operator</param>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.Options.Constraint">
+            <summary>
+                Represents ConstraintOptionData Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.Options.Constraint.#ctor(System.Int32,System.Int32)">
+            <summary>
+                Constraint TableOption
+            </summary>
+            <param name="skip">Skip Value for Constraint TableOption</param>
+            <param name="limit">Limit Value for Constraint TableOption</param>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.Options.FindByElement`1">
+            <summary>
+                Represents ElementOptionData Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.Options.FindByElement`1.#ctor(System.String,`0)">
+            <summary>
+                FindByElement TableOption
+            </summary>
+            <param name="name">the name of Element you want to find it</param>
+            <param name="value">the value of Element you want to find it</param>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.Options.Ownership">
+            <summary>
+                Represents OwnershipOptionData Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.Options.Ownership.#ctor(FiroozehGameServiceFaaS.Models.Enums.DBaaS.ItemOwnershipTypes,System.String)">
+            <summary>
+                the Ownership TableOption
+            </summary>
+            <param name="ownershipTypes">type of ownership</param>
+            <param name="ownerUserId">user id of TableOwnershipTypes.Another type</param>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.Options.SortByElement">
+            <summary>
+                Represents SortByOptionData Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.Options.SortByElement.#ctor(System.String,FiroozehGameServiceFaaS.Models.Enums.DBaaS.TableSortOrder)">
+            <summary>
+                the SortByElement TableOption
+            </summary>
+            <param name="elementName">the name of Element you want to Sort by it</param>
+            <param name="sortOrder">the sortOrder you want to Sort by it</param>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.Options.TableOption">
+            <summary>
+                Represents TableOption Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.TableAggregation">
+            <summary>
+                Represents DBaaSAggregation Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.TableAggregation.Of(System.String)">
+            <summary>
+            </summary>
+            <param name="tableId">the table id to create this aggregation</param>
+            <returns></returns>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.TableAggregation.TableAggregationBuilder">
+            <summary>
+                Represents TableAggregationBuilder Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.TableAggregation.TableAggregationBuilder.WithMatch(FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.Aggregations.MatchAggregation)">
+            <summary>
+                Set MatchAggregation For this TableAggregationBuilder
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.TableAggregation.TableAggregationBuilder.WithSort(FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.Aggregations.SortAggregation)">
+            <summary>
+                Set SortAggregation For this TableAggregationBuilder
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.TableAggregation.TableAggregationBuilder.WithConstraint(FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.Aggregations.ConstraintAggregation)">
+            <summary>
+                Set ConstraintAggregation For this TableAggregationBuilder
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.TableAggregation.TableAggregationBuilder.WithProject(FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.Aggregations.ProjectAggregation)">
+            <summary>
+                Set ProjectAggregation For this TableAggregationBuilder
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.TableAggregation.TableAggregationBuilder.Build">
+            <summary>
+                Build This TableAggregationBuilder
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.TableItemHelper">
+            <summary>
+                Represents TableItemHelper Data Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.TableItemHelper.Id">
+            <summary>
+                Gets the TableItem Object ID.
+            </summary>
+            <value>the TableItem Object ID</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.TableItemHelper.OwnerId">
+            <summary>
+                Gets the TableItem Owner User ID.
+            </summary>
+            <value>the TableItem Owner ID</value>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.TableItemHelper.ShouldSerializeId">
+            <summary>
+                To Prevent Serialize Id Property
+            </summary>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.TableItemHelper.ShouldSerializeOwnerId">
+            <summary>
+                To Prevent Serialize OwnerId Property
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.TableResult`1">
+            <summary>
+                Represents Table Result Data Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.TableResult`1.Count">
+            <summary>
+                Gets the Results Count
+            </summary>
+            <value>the Results Count</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.TableResult`1.Items">
+            <summary>
+                Gets the Results
+            </summary>
+            <value>the Results</value>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.EditUserProfile">
+            <summary>
+                Represents EditUserProfile In Game Service Basic API
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.EditUserProfile.Logo">
+            <summary>
+                Set New ProfileLogo(BytesBuffer) For CurrentPlayer.
+            </summary>
+            <value> New ProfileLogo For CurrentPlayer</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.EditUserProfile.NickName">
+            <summary>
+                Set New NickName For CurrentPlayer.
+            </summary>
+            <value> New NickName For CurrentPlayer</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.EditUserProfile.PhoneNumber">
+            <summary>
+                Set New PhoneNumber For CurrentPlayer.
+            </summary>
+            <value> New PhoneNumber For CurrentPlayer</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.EditUserProfile.Email">
+            <summary>
+                Set New Email For CurrentPlayer.
+            </summary>
+            <value> New Email For CurrentPlayer</value>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.EditUserProfile.#ctor(System.String,System.Byte[],System.String,System.String)">
+            <summary>
+            
+                EditUserProfile Data Model
+            </summary>
+            <param name="nickName">the value of nickName you want to update</param>
+            <param name="logo">the value of logo you want to update</param>
+            <param name="phoneNumber">the value of phoneNumber you want to update</param>
+            <param name="email">the value of email you want to update</param>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.FaaS.FaaSCore">
+            <summary>
+            Represents FaaSCore Data Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.FaaS.FaaSCore.Id">
+            <summary>
+                Gets the Function ID.
+            </summary>
+            <value>the Function ID</value>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.FaaS.FaaSResponse`1">
+            <summary>
+            Represents FaaSResponse Data Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="P:FiroozehGameServiceFaaS.Models.BasicApi.FaaS.FaaSResponse`1.Status">
+            <summary>
+            Gets the FaaSResponse Status
+            </summary>
+        </member>
+        <member name="P:FiroozehGameServiceFaaS.Models.BasicApi.FaaS.FaaSResponse`1.Message">
+            <summary>
+            Gets the Error Message
+            Message Available When status is false
+            </summary>
+        </member>
+        <member name="P:FiroozehGameServiceFaaS.Models.BasicApi.FaaS.FaaSResponse`1.Response">
+            <summary>
+            Gets the Response Object
+            </summary>
+        </member>
+        <member name="P:FiroozehGameServiceFaaS.Models.BasicApi.FaaS.FaaSResponse`1.ExecutionTime">
+            <summary>
+            Gets the Function ExecutionTime
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.Game">
+            <summary>
+                Represents Game Data Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.Game.Name">
+            <summary>
+                Gets the Game Name.
+            </summary>
+            <value>the Game Name</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.Game.Image">
+            <summary>
+                Gets the Game Cover URL.
+            </summary>
+            <value>the Game Cover URL</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.Game.Publisher">
+            <summary>
+                Gets the Game Publisher.
+            </summary>
+            <value>the Game Publisher</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.Game.OnlinePlayers">
+            <summary>
+                Gets the Game Online Players.
+            </summary>
+            <value>the Game Online Players</value>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.LeaderBoard">
+            <summary>
+                Represents LeaderBoard Data Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.LeaderBoard.Id">
+            <summary>
+                Gets the LeaderBoard id.
+            </summary>
+            <value>the LeaderBoard id</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.LeaderBoard.Description">
+            <summary>
+                Gets the LeaderBoard Description.
+            </summary>
+            <value>the LeaderBoard Description</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.LeaderBoard.From">
+            <summary>
+                Gets the LeaderBoard Form Value.
+                this Value Sets In GameService Developers Panel.
+            </summary>
+            <value>the LeaderBoard From Value</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.LeaderBoard.Game">
+            <summary>
+                Gets the Game id.
+            </summary>
+            <value>the Game id</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.LeaderBoard.Image">
+            <summary>
+                Gets the LeaderBoard Cover URL.
+            </summary>
+            <value>the LeaderBoard Cover URL</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.LeaderBoard.Key">
+            <summary>
+                Gets the LeaderBoard Key.
+                You Can Use It To Submit Score in a LeaderBoard
+            </summary>
+            <value>the LeaderBoard Key</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.LeaderBoard.Name">
+            <summary>
+                Gets the LeaderBoard Name.
+            </summary>
+            <value>the LeaderBoard Name</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.LeaderBoard.OrderType">
+            <summary>
+                Gets the LeaderBoard Order Type.
+                this Type Sets In GameService Developers Panel.
+            </summary>
+            <value>the LeaderBoard Order Type</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.LeaderBoard.Status">
+            <summary>
+                Gets the LeaderBoard status.
+                if the status is True You Can Submit Score in LeaderBoard
+            </summary>
+            <value>the LeaderBoard status</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.LeaderBoard.To">
+            <summary>
+                Gets the LeaderBoard To Value.
+                this Value Sets In GameService Developers Panel.
+            </summary>
+            <value>the LeaderBoard To Value</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.LeaderBoard.Reset">
+            <summary>
+                Gets the LeaderBoard Reset Value.
+                this Value Sets In GameService Developers Panel.
+            </summary>
+            <value>the LeaderBoard Reset Value</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.LeaderBoard.Wipe">
+            <summary>
+                Gets the LeaderBoard Wipe Value.
+                this Value Sets In GameService Developers Panel.
+            </summary>
+            <value>the LeaderBoard Wipe Value</value>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.LeaderBoardDetails">
+            <summary>
+                Represents LeaderBoardDetails Data Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.LeaderBoardDetails.Leaderboard">
+            <summary>
+                Gets the LeaderBoard.
+            </summary>
+            <value>the LeaderBoard</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.LeaderBoardDetails.Scores">
+            <summary>
+                Gets the List Of Scores.
+            </summary>
+            <value>the List Of Scores</value>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.LoginInfo">
+            <summary>
+                Represents LoginInfo Data Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.LoginInfo.UserId">
+            <summary>
+                Gets the User ID
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.LoginInfo.DeviceId">
+            <summary>
+                Gets the Device Id
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.LoginInfo.LoginMethod">
+            <summary>
+                Gets the Login Method
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.LoginInfo.IpAddress">
+            <summary>
+                Gets the IP Address with NAT port
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.LoginInfo.FirstLoginTime">
+            <summary>
+                Gets the First Login Time
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.LoginInfo.LastLoginTime">
+            <summary>
+                Gets the Last Login Time
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.MemberInfo">
+            <summary>
+                Represents User Data Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.MemberInfo.Email">
+            <summary>
+                Gets the Member Email.
+            </summary>
+            <value>the Member Email</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.MemberInfo.Id">
+            <summary>
+                Gets the Member ID
+                You Can Use it In MultiPlayer Functions that Needs Member id
+            </summary>
+            <value>the Member ID</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.MemberInfo.Logo">
+            <summary>
+                Gets the Member Logo URL.
+            </summary>
+            <value>the Member Logo URL</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.MemberInfo.Name">
+            <summary>
+                Gets the Member Name.
+            </summary>
+            <value>the Member Name</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.MemberInfo.PhoneNumber">
+            <summary>
+                Gets the Member Phone Number.
+            </summary>
+            <value>the Member Phone Number</value>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.Options.AchievementOption">
+            <summary>
+             Specifies the Achievement Options
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.Options.AchievementOption.CreateOption">
+            <summary>
+             Specifies the Create Achievement Options
+            </summary>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Options.AchievementOption.CreateOption.#ctor(System.String,System.String,System.String,System.Int32,System.Boolean)">
+            <summary>
+                Specifies the Create Achievement Options
+            </summary>
+            <param name="name">(NOTNULL) Specifies the Achievement Name (MUST Between 5-20 characters)</param>
+            <param name="key">(NOTNULL) Specifies the Achievement Key (MUST Between 5-32 characters)</param>
+            <param name="description">(NULLABLE) Specifies the Achievement Description</param>
+            <param name="point">Specifies the Achievement Point (MAX = 30)</param>
+            <param name="status">Specifies the Achievement Status</param>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.Options.AchievementOption.EditOption">
+            <summary>
+             Specifies the Edit Achievement Options
+            </summary>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Options.AchievementOption.EditOption.#ctor(System.String,System.String,System.String,System.Int32,System.Boolean)">
+            <summary>
+                Specifies the Edit Achievement Options
+            </summary>
+            <param name="name">(NULLABLE) Specifies the Achievement Name (MUST Between 5-20 characters)</param>
+            <param name="key">(NULLABLE) Specifies the Achievement Key (MUST Between 5-32 characters)</param>
+            <param name="description">(NULLABLE)Specifies the Achievement Description</param>
+            <param name="point">Specifies the Achievement Point (MAX = 30)</param>
+            <param name="status">Specifies the Achievement Status</param>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.Options.LeaderboardOption">
+            <summary>
+             Specifies the Leaderboard Options
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.Options.LeaderboardOption.CreateOption">
+            <summary>
+              Specifies the Create Leaderboard Options
+            </summary>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Options.LeaderboardOption.CreateOption.#ctor(System.String,System.String,System.String,System.Int32,System.Int32,FiroozehGameServiceFaaS.Models.Enums.LeaderboardOrderTypes,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+                Specifies the Create Leaderboard Options
+            </summary>
+            <param name="name">(NOTNULL) Specifies the Leaderboard Name (MUST Between 5-20 characters)</param>
+            <param name="key">(NOTNULL) Specifies the Leaderboard Key (MUST Between 5-32 characters)</param>
+            <param name="description">(NULLABLE) Specifies the Leaderboard Description</param>
+            <param name="minScore">Specifies the Leaderboard minScore</param>
+            <param name="maxScore">Specifies the Leaderboard maxScore</param>
+            <param name="orderType">Specifies the Leaderboard OrderType </param>
+            <param name="resetDay">Specifies the Leaderboard Reset Day (0 is Off)</param>
+            <param name="wipeDay">Specifies the Leaderboard Wipe Day (0 is Off)</param>
+            <param name="status">Specifies the Leaderboard Status</param>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.Options.LeaderboardOption.EditOption">
+            <summary>
+              Specifies the Edit Leaderboard Options
+            </summary>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Options.LeaderboardOption.EditOption.#ctor(System.String,System.String,System.String,System.Int32,System.Int32,FiroozehGameServiceFaaS.Models.Enums.LeaderboardOrderTypes,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+                Specifies the Edit Leaderboard Options
+            </summary>
+            <param name="name">Specifies the Leaderboard Name (MUST Between 5-20 characters)</param>
+            <param name="key">Specifies the Leaderboard Key (MUST Between 5-32 characters)</param>
+            <param name="description">Specifies the Leaderboard Description</param>
+            <param name="minScore">Specifies the Leaderboard minScore</param>
+            <param name="maxScore">Specifies the Leaderboard maxScore</param>
+            <param name="orderType">Specifies the Leaderboard OrderType </param>
+            <param name="resetDay">Specifies the Leaderboard Reset Day (-1 is Off)</param>
+            <param name="wipeDay">Specifies the Leaderboard Wipe Day (0 is Off)</param>
+            <param name="status">Specifies the Leaderboard Status</param>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.Providers.IAchievementProvider">
+            <summary>
+                Represents Achievement Provider Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Providers.IAchievementProvider.CreateAchievement(FiroozehGameServiceFaaS.Models.BasicApi.Options.AchievementOption.CreateOption)">
+            <summary>
+                Create a Achievement
+            </summary>
+            <param name="option">(NOTNULL)The Create Option</param>
+            <value> Create Achievement </value>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Providers.IAchievementProvider.EditAchievement(System.String,FiroozehGameServiceFaaS.Models.BasicApi.Options.AchievementOption.EditOption)">
+            <summary>
+                Edit a Achievement With Id
+            </summary>
+            <param name="achievementId">(NOTNULL)The ID of Achievement you Want To Edit it</param>
+            <param name="option">(NOTNULL)The Edit Option</param>
+            <value> Edit Achievement </value>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Providers.IAchievementProvider.DeleteAchievement(System.String)">
+            <summary>
+                Delete a Achievement With Id
+                that you have registered in the Developer panel.
+            </summary>
+            <param name="achievementId">(NOTNULL)The ID of Achievement you Want To Delete it</param>
+            <value> Delete Achievement </value>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Providers.IAchievementProvider.UnlockAchievement(System.String,System.String)">
+            <summary>
+                With this command you can Unlock achievement with the achievement ID
+                you registered in the Developer panel.
+            </summary>
+            <param name="userId">(NOTNULL)The ID of User you Want To Unlock achievement for it</param>
+            <param name="achievementKey">(NOTNULL)The Key of Achievement you Want To Unlock it</param>
+            <value> return unlocked Achievement </value>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Providers.IAchievementProvider.GetAchievements">
+            <summary>
+                With this command you can get list of all your game achievements
+                that you have registered in the Developer panel.
+            </summary>
+            <value> Get Achievements List </value>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Providers.IAchievementProvider.GetUserAchievements(System.String)">
+            <summary>
+                With this command you can get list of all User achievements
+                that you have registered in the Developer panel.
+            </summary>
+            <param name="userId">(NOTNULL)The ID of User you Want Get Achievements</param>
+            <value> Get Achievements List</value>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.Providers.IAssetsProvider">
+            <summary>
+                Represents Assets Provider Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Providers.IAssetsProvider.GetAssetInfo(System.String)">
+            <summary>
+                Gets Asset Info With AssetTag
+            </summary>
+            <param name="assetTag">(NOTNULL)Specifies the Asset tag that Set in Developers Panel.</param>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Providers.IAssetsProvider.DeleteAsset(System.String)">
+            <summary>
+                Delete Asset With AssetTag
+            </summary>
+            <param name="assetTag">(NOTNULL)Specifies the Asset tag that Set in Developers Panel.</param>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.Providers.ILeaderboardProvider">
+            <summary>
+                Represents Leaderboard Provider Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Providers.ILeaderboardProvider.CreateLeaderboard(FiroozehGameServiceFaaS.Models.BasicApi.Options.LeaderboardOption.CreateOption)">
+            <summary>
+                Create a Leaderboard
+            </summary>
+            <value> Create Leaderboard </value>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Providers.ILeaderboardProvider.EditLeaderboard(System.String,FiroozehGameServiceFaaS.Models.BasicApi.Options.LeaderboardOption.EditOption)">
+            <summary>
+                Edit a Leaderboard With Id
+            </summary>
+            <value> Edit Leaderboard </value>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Providers.ILeaderboardProvider.DeleteLeaderboard(System.String)">
+            <summary>
+                Delete a Leaderboard With Id
+                that you have registered in the Developer panel.
+            </summary>
+            <value> Delete Leaderboard </value>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Providers.ILeaderboardProvider.WipeLeaderboardScores(System.String)">
+            <summary>
+                Wipe a Leaderboard Scores With Id
+                that you have registered in the Developer panel.
+            </summary>
+            <value> Wipe Leaderboard Scores </value>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Providers.ILeaderboardProvider.GetUserScore(System.String,System.String)">
+            <summary>
+                With this command you can get Player Score with the ID of the LeaderBoard
+                you registered in the Developer panel.
+            </summary>
+            <param name="userId">(NOTNULL)The ID of User you Want To get Score</param>
+            <param name="leaderBoardKey">(NOTNULL)The Key of leaderBoard you Want To get Score</param>
+            <value> return Score </value>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Providers.ILeaderboardProvider.SubmitScore(System.String,System.String,System.Int32)">
+            <summary>
+                This command allows you to Submit Player Score with the ID of the leaderBoard
+                you have Registered in the Developer panel
+            </summary>
+            <param name="userId">(NOTNULL) The ID of User you Want To Submit Score</param>
+            <param name="leaderBoardKey">(NOTNULL)The Key of leaderBoard you Want To Submit Score</param>
+            <param name="scoreValue">scoreValue(The value must not exceed the maximum value Registered in the Developer Panel)</param>
+            <value> return SubmitScore </value>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Providers.ILeaderboardProvider.DeleteUserScore(System.String,System.String)">
+            <summary>
+                This command allows you to Delete Player Score with the ID of the leaderBoard
+                you have Registered in the Developer panel
+            </summary>
+            <param name="userId">(NOTNULL) The ID of User you Want To Delete Score</param>
+            <param name="leaderBoardKey">(NOTNULL)The Key of leaderBoard you Want To Delete Score</param>
+            <value> return SubmitScore </value>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Providers.ILeaderboardProvider.GetLeaderboardDetails(System.String)">
+            <summary>
+                Get a Leaderboard Details With Id
+                that you have registered in the Developer panel.
+            </summary>
+            <value> Get Leaderboard Details</value>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Providers.ILeaderboardProvider.GetLeaderboards">
+            <summary>
+                With this command you can get list of all your game Leaderboards
+                that you have registered in the Developer panel.
+            </summary>
+            <value> Get Leaderboard List </value>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.Providers.IPlayerProvider">
+            <summary>
+                Represents Player Provider Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Providers.IPlayerProvider.GetUserLastLoginInfo(System.String)">
+            <summary>
+                With this command you can get a User Last Login Data with the User ID
+            </summary>
+            <param name="userId">(NOTNULL)The ID of User you Want To get Data</param>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Providers.IPlayerProvider.GetMemberByUserId(System.String)">
+            <summary>
+                With this command you can get a Member Data with the User ID
+            </summary>
+            <param name="userId">(NOTNULL)The ID of Member you Want To get Detail</param>
+            <value> return Member Data </value>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Providers.IPlayerProvider.GetMemberByMemberId(System.String)">
+            <summary>
+                With this command you can get a Member Data with the Member ID
+            </summary>
+            <param name="memberId">(NOTNULL)The ID of Member you Want To get Detail</param>
+            <value> return Member Data </value>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Providers.IPlayerProvider.BanMember(System.String)">
+            <summary>
+                With this command you can Ban a Member with the Member ID
+            </summary>
+            <param name="memberId">(NOTNULL)The ID of Member you Want To Ban it</param>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Providers.IPlayerProvider.UnBanMember(System.String)">
+            <summary>
+                With this command you can UnBan a Member with the Member ID
+            </summary>
+            <param name="memberId">(NOTNULL)The ID of Member you Want To UnBan it</param>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.Providers.ISaveProvider">
+            <summary>
+                Represents SaveGame Provider Data Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Providers.ISaveProvider.SaveGame(System.String,System.String,System.Object)">
+            <summary>
+                With this command you can save your Current Status in Game
+            </summary>
+            <param name="userId">the User Id to Save Game for it</param>
+            <param name="saveGameName">saveGameName</param>
+            <param name="saveGameObj">the Object that you Want To Save it</param>
+            <value> return SaveDetails </value>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Providers.ISaveProvider.GetSaveGame``1(System.String)">
+            <summary>
+                This command will get you the last save you saved
+            </summary>
+            <param name="userId">the User Id to Get Save Game</param>
+            <value> return Player Last Save </value>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Providers.ISaveProvider.RemoveLastSave(System.String)">
+            <summary>
+                This command can remove the last current user saved
+            </summary>
+            <param name="userId">the User Id to Remove Save Game</param>
+            <value> return true if Remove Successfully </value>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.Providers.ITableProvider">
+            <summary>
+                Represents Table Provider Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Providers.ITableProvider.GetTableItems``1(FiroozehGameServiceFaaS.Models.BasicApi.DBaaS.TableAggregation)">
+            <summary>
+                This command will return all information about the Table with a specific ID and Aggregations
+            </summary>
+            <param name="aggregation">(NotNULL)The aggregation of Table you Want To get Detail</param>
+            <value> return the TableResult</value>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Providers.ITableProvider.GetTableItem``1(System.String,System.String)">
+            <summary>
+                This command returns one of the Specific Table information with a specific ID
+            </summary>
+            <param name="tableId">(Not NULL)The ID of Table you Want To get Detail</param>
+            <param name="itemId">(Not NULL)The ID of TableItem you Want To get Detail</param>
+            <value> return a Table Item</value>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Providers.ITableProvider.UpdateTableItem``1(System.String,System.String,``0)">
+            <summary>
+                This command will edit one of the Table information with a specific ID
+            </summary>
+            <param name="tableId">(Not NULL)The ID of Table you Want To Edit Details</param>
+            <param name="itemId">(Not NULL)The ID of TableItem you Want To Edit Details</param>
+            <param name="editedItem">(Not NULL)The Object of TableItem you Want To Edit Detail</param>
+            <value> return Edited Table Item</value>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Providers.ITableProvider.AddItemToTable``1(System.String,``0)">
+            <summary>
+                This command will Add new Table information with a specific ID
+            </summary>
+            <param name="tableId">(Not NULL)The ID of Table you Want To Add Item</param>
+            <param name="newItem">(Not NULL)The Object of TableItem you Want To Add</param>
+            <value> return Added Table Item</value>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Providers.ITableProvider.DeleteAllTableItems(System.String)">
+            <summary>
+                This command will delete All of the Table Items information with a specific ID
+            </summary>
+            <param name="tableId">(Not NULL)The ID of Table you Want To Delete All Items</param>
+            <value> return true if Remove Successfully </value>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Providers.ITableProvider.DeleteTableItem(System.String,System.String)">
+            <summary>
+                This command will delete one of the Table information with a specific ID
+            </summary>
+            <param name="tableId">(Not NULL)The ID of Table you Want To Delete one of Items</param>
+            <param name="itemId">(Not NULL)The ID of TableItem you Want To Delete it</param>
+            <value> return true if Remove Successfully </value>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.Publisher">
+            <summary>
+                Represents Publisher Data Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.Publisher.Name">
+            <summary>
+                Gets the Game Name.
+            </summary>
+            <value>the Game Name</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.Publisher.Image">
+            <summary>
+                Gets the Game Cover URL.
+            </summary>
+            <value>the Game Cover URL</value>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.Results`1">
+            <summary>
+                Represents Results Data Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.Results`1.AllCount">
+            <summary>
+                Gets the All Results Count
+            </summary>
+            <value>the All Results Count</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.Results`1.Values">
+            <summary>
+                Gets the Results
+            </summary>
+            <value>the Results</value>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.SaveDetails">
+            <summary>
+                Represents SaveDetails Data Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.SaveDetails.Game">
+            <summary>
+                Gets the Game id.
+            </summary>
+            <value>the Game id</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.SaveDetails.LastModify">
+            <summary>
+                Gets the Last Modify Save Time.
+            </summary>
+            <value>the Last Modify Save Time</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.SaveDetails.Name">
+            <summary>
+                Gets the Save Name.
+            </summary>
+            <value>the Save Name</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.SaveDetails.User">
+            <summary>
+                Gets the User id.
+            </summary>
+            <value>the User id</value>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.Score">
+            <summary>
+                Represents Score Data Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.Score.Rank">
+            <summary>
+                Gets the Rank of This Score.
+            </summary>
+            <value>the Rank of This Score</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.Score.Submitter">
+            <summary>
+                Gets the Member Submit this Score.
+            </summary>
+            <value>the Member Submit this Score</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.Score.Tries">
+            <summary>
+                Gets the Tries Count of This Score.
+            </summary>
+            <value>the Tries Count of This Score</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.Score.Value">
+            <summary>
+                Gets the Value of This Score.
+            </summary>
+            <value>the Value of This Score</value>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.SubmitScoreResponse">
+            <summary>
+                Represents SubmitScoreResponse Data Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.SubmitScoreResponse.Leaderboard">
+            <summary>
+                Gets the LeaderBoard.
+            </summary>
+            <value>the LeaderBoard</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.SubmitScoreResponse.Score">
+            <summary>
+                Gets the Score Value.
+            </summary>
+            <value>the Score Value</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.SubmitScoreResponse.Tries">
+            <summary>
+                Gets the Tries Value.
+                How Many Tries To Submit Score
+            </summary>
+            <value>the Tries Value</value>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.User">
+            <summary>
+                Represents User Data Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.User.Id">
+            <summary>
+                Gets the User id.
+            </summary>
+            <value>the User id</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.User.IsGuest">
+            <summary>
+                get this User Is Guest or Not.
+                (Note : Only Works on <see cref="!:GameService.GetCurrentPlayer" />)
+            </summary>
+            <value>this User Is Guest or Not</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.User.IsMe">
+            <summary>
+                get this User Is Yours or Not.
+            </summary>
+            <value>this User Is Yours or Not</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.User.Logo">
+            <summary>
+                Gets the User Logo URL.
+            </summary>
+            <value>the User Logo URL</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.User.Name">
+            <summary>
+                Gets the User Name.
+            </summary>
+            <value>the User Name</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.User.Email">
+            <summary>
+                Gets the User Email.(NULLABLE)
+            </summary>
+            <value>the User Email</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.User.PhoneNumber">
+            <summary>
+                Gets the User Phone Number.(NULLABLE)
+            </summary>
+            <value>the User Phone Number</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.BasicApi.User.Point">
+            <summary>
+                Gets the User Point.
+            </summary>
+            <value>the User Point</value>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Consts.GameServiceErrors">
+            <summary>
+                Represents All GameService Errors
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Consts.GameServiceErrors.Http">
+            <summary>
+                Represents All GameService Errors in HTTP Requests
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Consts.GameServiceErrors.Http.Internal">
+            <summary>
+                Represents GameService HTTP Internal Errors
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Consts.GameServiceErrors.Http.Authorize">
+            <inheritdoc />
+            <summary>
+                Represents GameService Authorize HTTP Errors
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Consts.GameServiceErrors.Http.Authorize.TokenRequired">
+            <summary>
+                These errors may never happen!
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Consts.GameServiceErrors.Http.LoginOrSignUp">
+            <inheritdoc />
+            <summary>
+                Represents GameService LoginOrSignUp HTTP Errors
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Consts.GameServiceErrors.Http.GetLastLoginMemberInfo">
+            <inheritdoc />
+            <summary>
+                Represents GameService GetLastLoginMemberInfo HTTP Errors
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Consts.GameServiceErrors.Http.Save">
+            <inheritdoc />
+            <summary>
+                Represents GameService Save HTTP Errors
+                Errors that occur in the following Functions :
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Consts.GameServiceErrors.Http.Achievement">
+            <inheritdoc />
+            <summary>
+                Represents GameService Achievement HTTP Errors
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Consts.GameServiceErrors.Http.Leaderboard">
+            <inheritdoc />
+            <summary>
+                Represents GameService Leaderboard HTTP Errors
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Consts.GameServiceErrors.Http.DownloadAssets">
+            <summary>
+                Represents GameService DownloadAssets HTTP Errors
+                And You Can Handle Them in <see cref="!:DownloadEventHandlers.DownloadError" />
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Consts.GameServiceErrors.Http.Table">
+            <summary>
+                Represents GameService Table HTTP Errors
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Consts.GameServiceErrors.Http.EditCurrentPlayer">
+            <summary>
+                Represents GameService EditCurrentPlayer HTTP Errors
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Consts.GameServiceErrors.Http.ChangePassword">
+            <summary>
+                Represents GameService ChangePassword HTTP Errors
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Consts.GameServiceErrors.Http.RevokeActiveDevice">
+            <summary>
+                Represents GameService RevokeActiveDevice HTTP Errors
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Consts.GameServiceErrors.Social">
+            <summary>
+                Represents All GameService Errors in Social Requests
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Consts.GameServiceErrors.Social.Friend">
+            <summary>
+                Represents All GameService Friend Errors in Social Requests
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Consts.GameServiceErrors.Social.Friend.SendFriendRequest">
+            <summary>
+                Represents GameService SendFriendRequest HTTP Errors
+                Errors that occur in the following Functions:
+                <see cref="!:Core.Social.Friend.SendFriendRequest" />
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Consts.GameServiceErrors.Social.Friend.AcceptFriendRequest">
+            <summary>
+                Represents GameService AcceptFriendRequest HTTP Errors
+                Errors that occur in the following Functions:
+                <see cref="!:Core.Social.Friend.AcceptFriendRequest" />
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Consts.GameServiceErrors.Social.Friend.DeleteFriend">
+            <summary>
+                Represents GameService DeleteFriend HTTP Errors
+                Errors that occur in the following Functions:
+                <see cref="!:Core.Social.Friend.DeleteFriend" />
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Consts.GameServiceErrors.Social.Party">
+            <summary>
+                Represents All GameService Party Errors in Social Requests
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Consts.GameServiceErrors.Social.Party.GetPartyInfo">
+            <summary>
+                Represents GameService GetPartyInfo HTTP Errors
+                Errors that occur in the following Functions:
+                <see cref="!:Core.Social.Party.GetPartyInfo" />
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Consts.GameServiceErrors.Social.Party.EditParty">
+            <summary>
+                Represents GameService EditParty HTTP Errors
+                Errors that occur in the following Functions:
+                <see cref="!:Core.Social.Party.EditParty" />
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Consts.GameServiceErrors.Social.Party.AddFriend">
+            <summary>
+                Represents GameService AddFriend HTTP Errors
+                Errors that occur in the following Functions:
+                <see cref="!:Core.Social.Party.AddFriend" />
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Consts.GameServiceErrors.Social.Party.JoinRequest">
+            <summary>
+                Represents GameService JoinRequest HTTP Errors
+                Errors that occur in the following Functions:
+                <see cref="!:Core.Social.Party.JoinRequest" />
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Consts.GameServiceErrors.Social.Party.AcceptJoinRequest">
+            <summary>
+                Represents GameService AcceptJoinRequest HTTP Errors
+                Errors that occur in the following Functions:
+                <see cref="!:Core.Social.Party.AcceptJoinRequest" />
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Consts.GameServiceErrors.Social.Party.RejectJoinRequest">
+            <summary>
+                Represents GameService RejectJoinRequest HTTP Errors
+                Errors that occur in the following Functions:
+                <see cref="!:Core.Social.Party.RejectJoinRequest" />
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Consts.GameServiceErrors.Social.Party.LeftParty">
+            <summary>
+                Represents GameService LeftParty HTTP Errors
+                Errors that occur in the following Functions:
+                <see cref="!:Core.Social.Party.LeftParty" />
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Consts.GameServiceErrors.Social.Party.KickMember">
+            <summary>
+                Represents GameService KickMember HTTP Errors
+                Errors that occur in the following Functions:
+                <see cref="!:Core.Social.Party.KickMember" />
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Consts.GameServiceErrors.Social.Party.SetOrUpdateRole">
+            <summary>
+                Represents GameService SetOrUpdateRole HTTP Errors
+                Errors that occur in the following Functions:
+                <see cref="!:Core.Social.Party.SetOrUpdateRole(string, string, string)" />
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Consts.GameServiceErrors.Social.Party.SetOrUpdateMemberVariable">
+            <summary>
+                Represents GameService SetOrUpdateMemberVariable HTTP Errors
+                Errors that occur in the following Functions:
+                <see cref="!:Core.Social.Party.SetOrUpdateMemberVariable" />
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Consts.GameServiceErrors.Social.Party.DeleteMemberVariable">
+            <summary>
+                Represents GameService DeleteVariable HTTP Errors
+                Errors that occur in the following Functions:
+                <see cref="!:Core.Social.Party.DeleteVariable" />
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Consts.GameServiceErrors.Social.Party.SetOrUpdateVariable">
+            <summary>
+                Represents GameService SetOrUpdateVariable HTTP Errors
+                Errors that occur in the following Functions:
+                <see cref="!:Core.Social.Party.SetOrUpdateVariable" />
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Consts.GameServiceErrors.Social.Party.DeleteVariable">
+            <summary>
+                Represents GameService DeleteVariable HTTP Errors
+                Errors that occur in the following Functions:
+                <see cref="!:Core.Social.Party.DeleteVariable" />
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Consts.GameServiceErrors.Social.Party.DeleteVariables">
+            <summary>
+                Represents GameService DeleteVariables HTTP Errors
+                Errors that occur in the following Functions:
+                <see cref="!:Core.Social.Party.DeleteVariables" />
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Consts.GameServiceErrors.Social.Party.DeleteMemberVariables">
+            <summary>
+                Represents GameService DeleteMemberVariables HTTP Errors
+                Errors that occur in the following Functions:
+                <see cref="!:Core.Social.Party.DeleteMemberVariables" />
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Consts.GameServiceErrors.Social.Party.GetMemberVariables">
+            <summary>
+                Represents GameService GetMemberVariables HTTP Errors
+                Errors that occur in the following Functions:
+                <see cref="!:Core.Social.Party.DeleteMemberVariables" />
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Enums.DBaaS.ItemOwnershipTypes">
+            <summary>
+                Represents ItemOwnershipTypes Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.DBaaS.ItemOwnershipTypes.Me">
+            <summary>
+                Sets The Current Member OwnerShip
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.DBaaS.ItemOwnershipTypes.Another">
+            <summary>
+                Sets The Other Member OwnerShip
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Enums.DBaaS.NumberMatcherTypes">
+            <summary>
+                Represents NumberMatcherTypes Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.DBaaS.NumberMatcherTypes.GraterThan">
+            <summary>
+                Use it When Need To GraterThan Number
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.DBaaS.NumberMatcherTypes.GraterThanOrEqual">
+            <summary>
+                Use it When Need To GraterThanOrEqual Number
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.DBaaS.NumberMatcherTypes.LessThan">
+            <summary>
+                Use it When Need To LessThan Number
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.DBaaS.NumberMatcherTypes.LessThanOrEqual">
+            <summary>
+                Use it When Need To LowerThanOrEqual Number
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Enums.DBaaS.ObjectMatcherTypes">
+            <summary>
+                Represents ObjectMatcherTypes Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.DBaaS.ObjectMatcherTypes.Equal">
+            <summary>
+                Use it When Need To Equal Object
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.DBaaS.ObjectMatcherTypes.NotEqual">
+            <summary>
+                Use it When Need To NotEqual Object
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Enums.DBaaS.TableSortOrder">
+            <summary>
+                Represents TableSortOrder Model In Game Service Basic API
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.DBaaS.TableSortOrder.Ascending">
+            <summary>
+                Use it When Need Ascending Sort
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.DBaaS.TableSortOrder.Descending">
+            <summary>
+                Use it When Need Descending Sort
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Enums.DebugLocation">
+            <summary>
+             Represents Game Service DebugLocation Class
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.DebugLocation.All">
+            <summary>
+            Happened In All GameService Systems
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.DebugLocation.Internal">
+            <summary>
+            Happened In GameService Core 
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.DebugLocation.Http">
+            <summary>
+            Happened In Http System
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.DebugLocation.Command">
+            <summary>
+            Happened In Command System
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.DebugLocation.Chat">
+            <summary>
+            Happened In Chat System
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.DebugLocation.TurnBased">
+            <summary>
+            Happened In TurnBased System
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.DebugLocation.RealTime">
+            <summary>
+            Happened In RealTime System
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.DebugLocation.Social">
+            <summary>
+            Happened In Social System
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.DebugLocation.Friend">
+            <summary>
+            Happened In Friend System
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.DebugLocation.Party">
+            <summary>
+            Happened In Party System
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Enums.EventAction">
+            <summary>
+             Represents EventType Class in GameService
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.EventAction.AcceptFriendRequest">
+            <summary>
+            Accept Friend Request Action
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.EventAction.AcceptJoinPartyRequest">
+            <summary>
+            Accept Friend Request Action
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.EventAction.KickPartyMember">
+            <summary>
+            kick Member Action
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.EventAction.ChangePartyMemberRole">
+            <summary>
+            Change Member Role Action
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.EventAction.AddToPartyByFriend">
+            <summary>
+            Add To Party By Friend Action
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Enums.GProtocolSendType">
+            <summary>
+                Represents GProtocolSendType Of Game Service RealTime
+                if is Reliable , the Packet Loss is Minimized.
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.GProtocolSendType.UnReliable">
+            <summary>
+            Sets To Use GProtocol To Send Packets on UnReliable Tech
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.GProtocolSendType.Reliable">
+            <summary>
+            Sets To Use GProtocol To Send Packets on Reliable Tech
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Enums.GSLive.AutoMatchStatus">
+            <summary>
+                Represents AutoMatchStatus Of GSLive System
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.GSLive.AutoMatchStatus.OnWaiting">
+            <summary>
+            Set When Current Member Joined To AutoMatch Queue
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.GSLive.AutoMatchStatus.OnUserUpdated">
+            <summary>
+            Set When Other Member Joined To AutoMatch Queue
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Enums.GSLive.Command.AutoMatchCancel">
+            <summary>
+                Represents AutoMatchCancel
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.GSLive.Command.AutoMatchCancel.Success">
+            <summary>
+            Set When AutoMatchCancel Success
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.GSLive.Command.AutoMatchCancel.NotInQueue">
+            <summary>
+            Set When The Member Not In AutoMatch Queue
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Enums.GSLive.GSLiveType">
+            <summary>
+                Represents GSLiveType Of GSLive System
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.GSLive.GSLiveType.NotSet">
+            <summary>
+            Used No Where
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.GSLive.GSLiveType.TurnBased">
+            <summary>
+            Used in TurnBased System
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.GSLive.GSLiveType.RealTime">
+            <summary>
+            Used in RealTime System
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.GSLive.GSLiveType.Command">
+            <summary>
+            Used in Command System
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Enums.GSLive.JoinType">
+            <summary>
+                Represents JoinType Of GSLive System
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.GSLive.JoinType.Normal">
+            <summary>
+            Sets When Current Member Join From Create Room
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.GSLive.JoinType.AutoMatch">
+            <summary>
+            Sets When Current Member Join From AutoMatch
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Enums.GSLive.ReconnectStatus">
+            <summary>
+                Represents ReconnectStatus Of Reconnect
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.GSLive.ReconnectStatus.Connecting">
+            <summary>
+            The Connecting Status, Current Client Try To Reconnect
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.GSLive.ReconnectStatus.Connected">
+            <summary>
+            The Connected Status, Current Client Connected To Server
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Enums.GSLive.RT.MessageType">
+            <summary>
+                Represents MessageType Of RealTime System
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.GSLive.RT.MessageType.Public">
+            <summary>
+            Set When RealTime Message is Public
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.GSLive.RT.MessageType.Private">
+            <summary>
+            Set When Realtime Message is Private
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Enums.GSLive.TB.PropertyAction">
+            <summary>
+            Represents Game Service TurnBased Property Actions
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.GSLive.TB.PropertyAction.SetOrUpdate">
+            <summary>
+            SetOrUpdate the Value of Key
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.GSLive.TB.PropertyAction.Delete">
+            <summary>
+            Delete the Value of Key
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Enums.GSLive.TB.PropertyType">
+            <summary>
+            Represents Game Service TurnBased Property Types
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.GSLive.TB.PropertyType.Room">
+            <summary>
+            Room Property
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.GSLive.TB.PropertyType.Member">
+            <summary>
+            Member Property
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Enums.LeaderboardOrderTypes">
+            <summary>
+             Represents Game Service LeaderboardOrderTypes Class
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.LeaderboardOrderTypes.TheLeast">
+            <summary>
+            TheLeast Option in LeaderboardOrderTypes
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.LeaderboardOrderTypes.TheMost">
+            <summary>
+            TheMost Option in LeaderboardOrderTypes
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.LeaderboardOrderTypes.LastScore">
+            <summary>
+            LastScore Option in LeaderboardOrderTypes
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.LeaderboardOrderTypes.TotalScores">
+            <summary>
+            TotalScores Option in LeaderboardOrderTypes
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Enums.LogType">
+            <summary>
+             Represents LogType Class in GameService Debug System
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.LogType.Normal">
+            <summary>
+            Normal Log
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.LogType.Error">
+            <summary>
+            Error Log
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Enums.LogType.Exception">
+            <summary>
+            Exception Log
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.EventArgs.Debug">
+            <summary>
+            Represents Game Service Debug Class
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.EventArgs.Debug.LogTypeType">
+            <summary>
+            the Debug Type (Normal or Error)
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.EventArgs.Debug.Where">
+            <summary>
+            the Debug Location
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.EventArgs.Debug.Data">
+            <summary>
+            the Debug Data
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.EventArgs.Debug.Exception">
+            <summary>
+            the Debug Exception
+            NullAble, Only Available When  Where is Exception
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.FaaSResponse">
+            <summary>
+            Used as base class for FiroozehGameServiceFaaS based registered method output
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.FaaSRequest">
+            <summary>
+            Used as Base class for FiroozehGameServiceFaaS based registered method input
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.FaaSRequest.FunctionId">
+            <summary>
+            Get the Current Function Id
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.GameServiceException">
+            <summary>
+                Represents Game Service Exception
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.GSLive.Chat">
+            <summary>
+                Represents Chat Data Model In GameService Command System
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.GSLive.Chat.ChannelName">
+            <summary>
+                Gets the Chat Channel Name
+            </summary>
+            <value>the Chat Channel Name</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.GSLive.Chat.IsPrivate">
+            <summary>
+                Gets the Chat Privacy.
+            </summary>
+            <value>the Chat Privacy</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.GSLive.Chat.Message">
+            <summary>
+                Gets the Chat Message Data
+            </summary>
+            <value>the Chat Message Data</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.GSLive.Chat.ReceiverId">
+            <summary>
+                Gets the Chat Receiver Id.
+            </summary>
+            <value>the Chat Receiver Id</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.GSLive.Chat.Sender">
+            <summary>
+                Gets the Chat Sender Member.
+            </summary>
+            <value>the Chat Sender Member</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.GSLive.Chat.SendTime">
+            <summary>
+                Gets the Chat Message Send Time in Unix Time
+            </summary>
+            <value>the Chat Message Send Time in Unix Time</value>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.GSLive.Game">
+            <summary>
+                Represents Game Data Model In GameService MultiPlayer System (GSLive)
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.GSLive.Game.Id">
+            <summary>
+                Gets the Game id.
+            </summary>
+            <value>the Game id</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.GSLive.Game.Logo">
+            <summary>
+                Gets the Game Logo URL.
+            </summary>
+            <value>the Game Logo</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.GSLive.Game.Name">
+            <summary>
+                Gets the Game Name.
+            </summary>
+            <value>the Game Name</value>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.GSLive.Member">
+            <summary>
+                Represents Member Data Model In GameService MultiPlayer System (GSLive)
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.GSLive.Member.Extra">
+            <summary>
+                Gets the Member Extra Data (NULLABLE).
+                NOTE : The Extra Data Only Available in :
+                1 - AutoMatch
+                2 - Join Room
+                3 - Member Details
+            </summary>
+            <value>the Member Extra</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.GSLive.Member.Id">
+            <summary>
+                Gets the Member ID
+                You Can Use it In MultiPlayer Functions that Needs Member id
+            </summary>
+            <value>the Member ID</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.GSLive.Member.Logo">
+            <summary>
+                Gets the Member Logo URL.
+            </summary>
+            <value>the Member Logo URL</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.GSLive.Member.Name">
+            <summary>
+                Gets the Member Name.
+            </summary>
+            <value>the Member Name</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.GSLive.Member.User">
+            <summary>
+                Gets the Member User Data
+            </summary>
+            <value>the Member User Data</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.GSLive.Member.IsOnline">
+            <summary>
+                Gets the Member Online Status.
+                this Property Only Available in <see cref="!:GameService.GetMemberData"/> and  <see cref="!:GameService.GetCurrentPlayer"/>
+            </summary>
+            <value>the Member Online Status</value>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.GSLive.Providers.IChatProvider">
+            <summary>
+                Represents Chat Provider Model In GsLive
+            </summary>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.GSLive.Providers.IChatProvider.GetMessages(System.String)">
+            <summary>
+                Gets Channel Messages
+            </summary>
+            <param name="channelName">(NOTNULL)Specifies the channelName that Subscribed Before.</param>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.GSLive.Providers.IChatProvider.WipeMessages(System.String)">
+            <summary>
+                Wipe Channel Messages
+            </summary>
+            <param name="channelName">(NOTNULL)Specifies the channelName that Subscribed Before.</param>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.GSLive.Providers.IChatProvider.DeleteChannel(System.String)">
+            <summary>
+                Delete Channel
+            </summary>
+            <param name="channelName">(NOTNULL)Specifies the channelName that Subscribed Before.</param>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.GSLive.ChatResult`1">
+            <summary>
+                Represents Chat Result Data Model In GsLive
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.GSLive.ChatResult`1.Count">
+            <summary>
+                Gets the Results Count
+            </summary>
+            <value>the Results Count</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.GSLive.ChatResult`1.Items">
+            <summary>
+                Gets the Results
+            </summary>
+            <value>the Results</value>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Internal.AssetInfoData">
+            <summary>
+                Represents Game Service AssetsInfoData Class
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Internal.AssetInfoData.Link">
+            <summary>
+                Gets the Asset Link for Download
+            </summary>
+            <value>the Asset Link for Download</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Internal.AssetInfoData.Name">
+            <summary>
+                Gets the Asset Name
+            </summary>
+            <value>the Asset Name</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Internal.AssetInfoData.Size">
+            <summary>
+                Gets the Asset Size in Bytes.
+            </summary>
+            <value>the Asset Size in Bytes</value>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Internal.AssetInfo">
+            <summary>
+                Represents Game Service AssetInfo Class
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Internal.AssetInfo.AssetInfoData">
+            <summary>
+                Gets the Asset Info Data Class
+            </summary>
+            <value>the Asset Info Data Class</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Internal.AssetInfo.Status">
+            <summary>
+                Gets the Asset Info Get Status
+            </summary>
+            <value>the Asset Info Get Status</value>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Internal.GSTime">
+            <summary>
+                Represents GameServiceTime Class
+            </summary>
+        </member>
+        <member name="P:FiroozehGameServiceFaaS.Models.Internal.GSTime.ServerTime">
+            <summary>
+                Gets the Current Server Time
+            </summary>
+            <value>the Current Server Time</value>
+        </member>
+        <member name="P:FiroozehGameServiceFaaS.Models.Internal.GSTime.DeviceTime">
+            <summary>
+                Gets the Current Device Time
+            </summary>
+            <value>the Current Device Time</value>
+        </member>
+        <member name="M:FiroozehGameServiceFaaS.Models.Internal.GSTime.IsDeviceTimeValid">
+            <summary>
+                Check DeviceTimeValid
+            </summary>
+            <value>Returns True if Device Time Is Valid(not grater than 2 sec With Server)</value>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Internal.InternalPropertyAction">
+            <summary>
+            Represents Game Service TurnBased Property Actions
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Internal.InternalPropertyAction.MemberSetOrUpdate">
+            <summary>
+            SetOrUpdate the Value of Key
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Internal.InternalPropertyAction.MemberDelete">
+            <summary>
+            Delete the Value of Key
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Internal.InternalPropertyAction.RoomSetOrUpdate">
+            <summary>
+            SetOrUpdate the Value of Key
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Internal.InternalPropertyAction.RoomDelete">
+            <summary>
+            Delete the Value of Key
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Models.Internal.SystemInfo">
+            <summary>
+                Represents System Info In Game Service
+            </summary>
+        </member>
+        <member name="T:FiroozehGameServiceFaaS.Utils.DebugUtil">
+            <summary>
+              Represents Game Service DebugUtil
+            </summary>
+        </member>
+    </members>
+</doc>
