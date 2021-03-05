@@ -788,7 +788,7 @@
              Specifies the Edit Achievement Options
             </summary>
         </member>
-        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Options.AchievementOption.EditOption.#ctor(System.String,System.String,System.String,System.Int32,System.Boolean)">
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Options.AchievementOption.EditOption.#ctor(System.String,System.String,System.String,System.Nullable{System.Int32},System.Nullable{System.Boolean})">
             <summary>
                 Specifies the Edit Achievement Options
             </summary>
@@ -827,7 +827,7 @@
               Specifies the Edit Leaderboard Options
             </summary>
         </member>
-        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Options.LeaderboardOption.EditOption.#ctor(System.String,System.String,System.String,System.Int32,System.Int32,FiroozehGameServiceFaaS.Models.Enums.LeaderboardOrderTypes,System.Int32,System.Int32,System.Boolean)">
+        <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Options.LeaderboardOption.EditOption.#ctor(System.String,System.String,System.String,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{FiroozehGameServiceFaaS.Models.Enums.LeaderboardOrderTypes},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Boolean})">
             <summary>
                 Specifies the Edit Leaderboard Options
             </summary>
@@ -1878,6 +1878,11 @@
             Used as base class for FiroozehGameServiceFaaS based registered method output
             </summary>
         </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.FaaSResponse.FunctionId">
+            <summary>
+            Get the Current Function Id
+            </summary>
+        </member>
         <member name="T:FiroozehGameServiceFaaS.Models.FaaSRequest">
             <summary>
             Used as Base class for FiroozehGameServiceFaaS based registered method input
@@ -2021,12 +2026,6 @@
             </summary>
             <param name="channelName">(NOTNULL)Specifies the channelName that Subscribed Before.</param>
         </member>
-        <member name="M:FiroozehGameServiceFaaS.Models.GSLive.Providers.IChatProvider.DeleteChannel(System.String)">
-            <summary>
-                Delete Channel
-            </summary>
-            <param name="channelName">(NOTNULL)Specifies the channelName that Subscribed Before.</param>
-        </member>
         <member name="T:FiroozehGameServiceFaaS.Models.GSLive.ChatResult`1">
             <summary>
                 Represents Chat Result Data Model In GsLive
@@ -2043,6 +2042,38 @@
                 Gets the Results
             </summary>
             <value>the Results</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Internal.EditAchievement.Description">
+            <summary>
+                Gets the Achievement Description.
+            </summary>
+            <value>the Achievement Description</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Internal.EditAchievement.Key">
+            <summary>
+                Gets the Achievement Key.
+                You Can Use It To Unlock Achievement
+            </summary>
+            <value>the Achievement Key</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Internal.EditAchievement.Name">
+            <summary>
+                Gets the Achievement Name.
+            </summary>
+            <value>the Achievement Name</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Internal.EditAchievement.Point">
+            <summary>
+                Gets the Achievement Point.
+            </summary>
+            <value>the Achievement Point</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Internal.EditAchievement.Status">
+            <summary>
+                Gets the Achievement status.
+                if the status is True You Can Unlock Achievement
+            </summary>
+            <value>the Achievement status</value>
         </member>
         <member name="T:FiroozehGameServiceFaaS.Models.Internal.AssetInfoData">
             <summary>
@@ -2131,6 +2162,67 @@
             <summary>
             Delete the Value of Key
             </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Internal.EditLeaderBoard.Description">
+            <summary>
+                Gets the LeaderBoard Description.
+            </summary>
+            <value>the LeaderBoard Description</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Internal.EditLeaderBoard.From">
+            <summary>
+                Gets the LeaderBoard Form Value.
+                this Value Sets In GameService Developers Panel.
+            </summary>
+            <value>the LeaderBoard From Value</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Internal.EditLeaderBoard.Key">
+            <summary>
+                Gets the LeaderBoard Key.
+                You Can Use It To Submit Score in a LeaderBoard
+            </summary>
+            <value>the LeaderBoard Key</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Internal.EditLeaderBoard.Name">
+            <summary>
+                Gets the LeaderBoard Name.
+            </summary>
+            <value>the LeaderBoard Name</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Internal.EditLeaderBoard.OrderType">
+            <summary>
+                Gets the LeaderBoard Order Type.
+                this Type Sets In GameService Developers Panel.
+            </summary>
+            <value>the LeaderBoard Order Type</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Internal.EditLeaderBoard.Status">
+            <summary>
+                Gets the LeaderBoard status.
+                if the status is True You Can Submit Score in LeaderBoard
+            </summary>
+            <value>the LeaderBoard status</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Internal.EditLeaderBoard.To">
+            <summary>
+                Gets the LeaderBoard To Value.
+                this Value Sets In GameService Developers Panel.
+            </summary>
+            <value>the LeaderBoard To Value</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Internal.EditLeaderBoard.Reset">
+            <summary>
+                Gets the LeaderBoard Reset Value.
+                this Value Sets In GameService Developers Panel.
+            </summary>
+            <value>the LeaderBoard Reset Value</value>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.Internal.EditLeaderBoard.Wipe">
+            <summary>
+                Gets the LeaderBoard Wipe Value.
+                this Value Sets In GameService Developers Panel.
+            </summary>
+            <value>the LeaderBoard Wipe Value</value>
         </member>
         <member name="T:FiroozehGameServiceFaaS.Models.Internal.SystemInfo">
             <summary>
