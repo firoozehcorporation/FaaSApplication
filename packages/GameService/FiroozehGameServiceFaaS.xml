@@ -85,13 +85,12 @@
             </summary>
             <param name="faaSToken">Set The FaaS Token that Registered in the Developer panel</param>
         </member>
-        <member name="M:FiroozehGameServiceFaaS.GameServiceFaaS.RegisterFunction``2(System.Func{``0,System.Threading.Tasks.Task{``1}},System.UInt16,System.UInt16)">
+        <member name="M:FiroozehGameServiceFaaS.GameServiceFaaS.RegisterFunction``2(System.Func{``0,System.Threading.Tasks.Task{``1}},System.UInt16)">
             <summary>
             Register a Function
             </summary>
             <param name="func">Specifies the Function</param>
             <param name="timeout">Specifies the Function Timeout</param>
-            <param name="maxWaitingTime">Specifies the Function max Waiting Time</param>
             <typeparam name="TIn">Specifies the Function Input Type</typeparam>
             <typeparam name="TOut">Specifies the Function Output Type</typeparam>
         </member>
@@ -123,7 +122,6 @@
             <summary>
             Get Game Service FaaS Version
             </summary>
-            <returns></returns>
         </member>
         <member name="T:FiroozehGameServiceFaaS.Models.BasicApi.Achievement">
             <summary>
@@ -875,7 +873,7 @@
                 you registered in the Developer panel.
             </summary>
             <param name="userId">(NOTNULL)The ID of User you Want To Unlock achievement for it</param>
-            <param name="achievementKey">(NOTNULL)The Key of Achievement you Want To Unlock it</param>
+            <param name="achievementId">(NOTNULL)The Id of Achievement you Want To Unlock it</param>
             <value> return unlocked Achievement </value>
         </member>
         <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Providers.IAchievementProvider.GetAchievements">
@@ -920,12 +918,15 @@
                 Create a Leaderboard
             </summary>
             <value> Create Leaderboard </value>
+            <param name="option">(NOTNULL)The Create Option</param>
         </member>
         <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Providers.ILeaderboardProvider.EditLeaderboard(System.String,FiroozehGameServiceFaaS.Models.BasicApi.Options.LeaderboardOption.EditOption)">
             <summary>
                 Edit a Leaderboard With Id
             </summary>
             <value> Edit Leaderboard </value>
+            <param name="leaderboardId">(NOTNULL)The ID of Leaderboard you Want To Edit it</param>
+            <param name="option">(NOTNULL)The Edit Option</param>
         </member>
         <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Providers.ILeaderboardProvider.DeleteLeaderboard(System.String)">
             <summary>
@@ -933,6 +934,7 @@
                 that you have registered in the Developer panel.
             </summary>
             <value> Delete Leaderboard </value>
+            <param name="leaderBoardId">(NOTNULL)The ID of Leaderboard you Want To Delete it</param>
         </member>
         <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Providers.ILeaderboardProvider.WipeLeaderboardScores(System.String)">
             <summary>
@@ -940,6 +942,7 @@
                 that you have registered in the Developer panel.
             </summary>
             <value> Wipe Leaderboard Scores </value>
+            <param name="leaderBoardId">(NOTNULL)The ID of Leaderboard you Want To Wipe it</param>
         </member>
         <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Providers.ILeaderboardProvider.GetUserScore(System.String,System.String)">
             <summary>
@@ -947,7 +950,7 @@
                 you registered in the Developer panel.
             </summary>
             <param name="userId">(NOTNULL)The ID of User you Want To get Score</param>
-            <param name="leaderBoardKey">(NOTNULL)The Key of leaderBoard you Want To get Score</param>
+            <param name="leaderBoardId">(NOTNULL)The Id of leaderBoard you Want To get Score</param>
             <value> return Score </value>
         </member>
         <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Providers.ILeaderboardProvider.SubmitScore(System.String,System.String,System.Int32)">
@@ -956,7 +959,7 @@
                 you have Registered in the Developer panel
             </summary>
             <param name="userId">(NOTNULL) The ID of User you Want To Submit Score</param>
-            <param name="leaderBoardKey">(NOTNULL)The Key of leaderBoard you Want To Submit Score</param>
+            <param name="leaderBoardId">(NOTNULL)The Id of leaderBoard you Want To Submit Score</param>
             <param name="scoreValue">scoreValue(The value must not exceed the maximum value Registered in the Developer Panel)</param>
             <value> return SubmitScore </value>
         </member>
@@ -966,7 +969,7 @@
                 you have Registered in the Developer panel
             </summary>
             <param name="userId">(NOTNULL) The ID of User you Want To Delete Score</param>
-            <param name="leaderBoardKey">(NOTNULL)The Key of leaderBoard you Want To Delete Score</param>
+            <param name="leaderBoardId">(NOTNULL)The Id of leaderBoard you Want To Delete Score</param>
             <value> return SubmitScore </value>
         </member>
         <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Providers.ILeaderboardProvider.GetLeaderboardDetails(System.String)">
@@ -975,6 +978,7 @@
                 that you have registered in the Developer panel.
             </summary>
             <value> Get Leaderboard Details</value>
+            <param name="leaderBoardId">(NOTNULL)The ID of Leaderboard you Want To Get Details</param>
         </member>
         <member name="M:FiroozehGameServiceFaaS.Models.BasicApi.Providers.ILeaderboardProvider.GetLeaderboards">
             <summary>

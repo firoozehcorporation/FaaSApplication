@@ -1,5 +1,7 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using FiroozehGameServiceFaaS;
+using FluentScheduler;
 
 namespace FaaSApplication
 {
@@ -14,8 +16,16 @@ namespace FaaSApplication
             
             GameServiceFaaS.RegisterFunction<Models.GetAllAchievement.Request
                 , Models.GetAllAchievement.Response>(GetAllAchievements);
+            
+            JobManager.AddJob(TestScheduleFunction, s => s.ToRunEvery(10).Seconds());
+            
+            GameServiceFaaS.Run();
+        }
 
-            GameServiceFaaS.Run(false);
+
+        private static void TestScheduleFunction()
+        {
+            Console.WriteLine("Called After 10 secs");
         }
         
         
