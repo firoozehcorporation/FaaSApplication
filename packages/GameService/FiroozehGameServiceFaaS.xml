@@ -85,11 +85,12 @@
             </summary>
             <param name="faaSToken">Set The FaaS Token that Registered in the Developer panel</param>
         </member>
-        <member name="M:FiroozehGameServiceFaaS.GameServiceFaaS.RegisterFunction``2(System.Func{``0,System.Threading.Tasks.Task{``1}},System.UInt16)">
+        <member name="M:FiroozehGameServiceFaaS.GameServiceFaaS.RegisterFunction``2(System.Func{``0,System.Threading.Tasks.Task{``1}},System.Boolean,System.UInt16)">
             <summary>
             Register a Function
             </summary>
             <param name="func">Specifies the Function</param>
+            <param name="isPublic">Specifies the Function Visibility</param>
             <param name="timeout">Specifies the Function Timeout</param>
             <typeparam name="TIn">Specifies the Function Input Type</typeparam>
             <typeparam name="TOut">Specifies the Function Output Type</typeparam>
@@ -1882,19 +1883,19 @@
             Used as base class for FiroozehGameServiceFaaS based registered method output
             </summary>
         </member>
-        <member name="F:FiroozehGameServiceFaaS.Models.FaaSResponse.FunctionId">
-            <summary>
-            Get the Current Function Id
-            </summary>
-        </member>
         <member name="T:FiroozehGameServiceFaaS.Models.FaaSRequest">
             <summary>
             Used as Base class for FiroozehGameServiceFaaS based registered method input
             </summary>
         </member>
-        <member name="F:FiroozehGameServiceFaaS.Models.FaaSRequest.FunctionId">
+        <member name="F:FiroozehGameServiceFaaS.Models.FaaSRequest.Member">
             <summary>
-            Get the Current Function Id
+            Get the Caller Member
+            </summary>
+        </member>
+        <member name="F:FiroozehGameServiceFaaS.Models.FaaSRequest.Game">
+            <summary>
+            Get the Caller Game
             </summary>
         </member>
         <member name="T:FiroozehGameServiceFaaS.Models.GameServiceException">
@@ -1971,16 +1972,6 @@
                 Represents Member Data Model In GameService MultiPlayer System (GSLive)
             </summary>
         </member>
-        <member name="F:FiroozehGameServiceFaaS.Models.GSLive.Member.Extra">
-            <summary>
-                Gets the Member Extra Data (NULLABLE).
-                NOTE : The Extra Data Only Available in :
-                1 - AutoMatch
-                2 - Join Room
-                3 - Member Details
-            </summary>
-            <value>the Member Extra</value>
-        </member>
         <member name="F:FiroozehGameServiceFaaS.Models.GSLive.Member.Id">
             <summary>
                 Gets the Member ID
@@ -2005,13 +1996,6 @@
                 Gets the Member User Data
             </summary>
             <value>the Member User Data</value>
-        </member>
-        <member name="F:FiroozehGameServiceFaaS.Models.GSLive.Member.IsOnline">
-            <summary>
-                Gets the Member Online Status.
-                this Property Only Available in <see cref="!:GameService.GetMemberData"/> and  <see cref="!:GameService.GetCurrentPlayer"/>
-            </summary>
-            <value>the Member Online Status</value>
         </member>
         <member name="T:FiroozehGameServiceFaaS.Models.GSLive.Providers.IChatProvider">
             <summary>
