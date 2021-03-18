@@ -35,7 +35,7 @@
         <Reference Include="DotNetEnv, Version=2.1.1.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\packages\GameService\DotNetEnv.dll</HintPath>
         </Reference>
-        <Reference Include="FiroozehGameServiceFaaS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <Reference Include="FiroozehGameServiceFaaS, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\packages\GameService\FiroozehGameServiceFaaS.dll</HintPath>
         </Reference>
         <Reference Include="FluentScheduler, Version=5.5.1.0, Culture=neutral, PublicKeyToken=null">
