@@ -103,11 +103,10 @@
             <typeparam name="TIn">Specifies the Function Input Type</typeparam>
             <typeparam name="TOut">Specifies the Function Output Type</typeparam>
         </member>
-        <member name="M:FiroozehGameServiceFaaS.GameServiceFaaS.Run(System.Boolean)">
+        <member name="M:FiroozehGameServiceFaaS.GameServiceFaaS.Run">
             <summary>
             Run Game Service FaaS System
             </summary>
-            <param name="isDebug">set it true when running in Debug Mode For Testing</param>
         </member>
         <member name="M:FiroozehGameServiceFaaS.GameServiceFaaS.Dispose">
             <summary>
@@ -1888,14 +1887,14 @@
             Used as Base class for FiroozehGameServiceFaaS based registered method input
             </summary>
         </member>
-        <member name="F:FiroozehGameServiceFaaS.Models.FaaSRequest.Member">
+        <member name="P:FiroozehGameServiceFaaS.Models.FaaSRequest.FromMemberId">
             <summary>
-            Get the Caller Member
+            Get the From Member Id
             </summary>
         </member>
-        <member name="F:FiroozehGameServiceFaaS.Models.FaaSRequest.Game">
+        <member name="P:FiroozehGameServiceFaaS.Models.FaaSRequest.FromGameId">
             <summary>
-            Get the Caller Game
+            Get the From Game Id
             </summary>
         </member>
         <member name="T:FiroozehGameServiceFaaS.Models.GameServiceException">
